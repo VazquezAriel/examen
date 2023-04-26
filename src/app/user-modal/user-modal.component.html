@@ -1,0 +1,141 @@
+
+<!-- BUTTON CLOSE -->
+<div style="float:right" class="mt--3 mr--2">
+    <button mat-button color="primary" (click)="closeModal()" > X
+    </button>
+</div>
+
+
+<!-- FORM -->
+<form autocomplete="off" [formGroup]="form">
+
+    <!-- USER DATA -->
+    <div class="card-header">
+        <h2>Datos del Usuario</h2>
+    </div>
+
+    <div class="card-body card-body-info-size">
+        
+        <!-- ROW -->
+        <div class="row">
+
+            <!-- NOMBRE -->
+            <div class="col">
+                <label class="form-control-label">Nombres</label>
+                <div class="input-group mb-2">
+                    <input class="form-control" type="text" formControlName="name" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- APELLIDO -->
+            <div class="col">
+                <label class="form-control-label">Apellidos</label>
+                <div class="input-group mb-2">
+                    <input class="form-control" type="text" formControlName="lastName"/>
+                </div>
+            </div>
+
+        </div>
+        
+
+        <!-- ROW -->
+        <div class="row">
+
+            <!-- EDAD -->
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label class="form-control-label">Edad</label>
+                <div class="input-group mb-2">
+                    <input class="form-control" type="number" formControlName="age"/>
+                </div>
+            </div>
+
+            <!-- NACIONALIDAD -->
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label class="form-control-label">Nacionalidad</label>
+                <div class="input-group mb-2">
+                    <select class="form-control" formControlName="nationality">
+                        <option value="Ecuatoriana">Ecuatoriana</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Española">Española</option>
+                        <option value="Mexicana">Mexicana</option>
+                        <option value="Colombiana">Colombiana</option>
+                        <option value="Chilena">Chilena</option>
+                        <option value="Peruana">Peruana</option>
+                        <option value="Brasileña">Brasileña</option>
+                        <option value="Estadounidense">Estadounidense</option>
+                        <option value="Canadiense">Canadiense</option>
+                        <option value="Francesa">Francesa</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ROW -->
+        <div class="row">
+        
+            <!-- SEXO-->
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label class="form-control-label">Sexo</label>
+                <div class="input-group mb-2">
+                    <select class="form-control" formControlName="gender">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- NIVEL DE EDUCACION-->
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label class="form-control-label">Nivel de Educacion</label>
+                <div class="input-group mb-2">
+                    <select class="form-control" formControlName="educationLevel">
+                        <option value="Educación inicial o preescolar">Educación inicial o preescolar</option>
+                        <option value="Educación primaria">Educación primaria</option>
+                        <option value="Educación secundaria básica">Educación secundaria básica</option>
+                        <option value="Educación secundaria superior o bachillerato">Educación secundaria superior o bachillerato</option>
+                        <option value="Formación profesional y técnica">Formación profesional y técnica</option>
+                        <option value="Educación superior (grado o licenciatura)">Educación superior (grado o licenciatura)</option>
+                        <option value="Maestría o posgrado">Maestría o posgrado</option>
+                        <option value="Doctorado o PhD">Doctorado o PhD</option>
+                    </select>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <!-- ROW -->
+        <div class="row">
+        
+            <!-- CORREO-->
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label class="form-control-label">Correo electronico</label>
+                <div class="input-group mb-2">
+                    <input class="form-control" type="text" formControlName="email"/>
+                </div>
+            </div>
+
+            <!-- NIVEL DE EDUCACION-->
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <label class="form-control-label">Contraseña</label>
+                <div class="input-group mb-2">
+                    <input class="form-control"  type="password" formControlName="password"/>
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</form>
+
+<div class="card-footer text-right mb--9">
+    <button [disabled] ="form.invalid"  mat-button color="primary" (click)="this.createUser()">
+        Guardar
+    </button>
+</div>

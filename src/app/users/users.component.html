@@ -1,0 +1,68 @@
+<p>
+    <mat-toolbar color="primary">
+      <span>Examen - Complexivo</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="donwloadPDF()">
+        <mat-icon>picture_as_pdf</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+</p>
+
+
+<table class=" table">
+        <thead >
+          <tr>
+            <th >
+              <strong >Nombres</strong>
+            </th>
+            <th >
+              <strong>Apellidos</strong>
+            </th>
+            <th >
+              <strong>Edad</strong>
+            </th>
+            <th >
+              <strong>Sexo</strong>
+            </th>
+            <th >
+              <strong>Nivel de Educacion</strong>
+            </th>
+            <th >
+              <strong>Nacionalidad</strong>
+            </th>
+            <th >
+              <strong>Fecha de creacion</strong>
+            </th>
+            <th >
+              <strong>Tiempo en el sitio web</strong>
+            </th>
+          </tr>
+        </thead>
+
+        
+        <tbody >
+          <tr *ngFor="let user of users">
+
+            <td><span >  {{ user.name }} </span></td>
+            <td><span > {{ user.lastName }}</span></td>
+            <td><span > {{ user.age }} </span></td>
+            <td><span > {{ user.gender }} </span></td>
+            <td><span > {{ user.educationLevel }} </span></td>
+            <td><span > {{ user.nationality }} </span></td>
+            <td><span > {{ user.date| date:'longDate' }} </span></td>
+            <td><span > {{ user.time }} segundos </span></td>
+
+          </tr>
+        </tbody>
+</table>
+
+<div class="fab-container">
+  <button mat-fab  matTooltipPosition="right" color="primary" class="bg-primary no-outline" (click)="openAddDialog()">
+  <mat-icon>add</mat-icon>
+</button>
+</div>
+    
+    
